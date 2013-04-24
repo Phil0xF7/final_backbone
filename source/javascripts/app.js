@@ -17,7 +17,9 @@ $(document).ready(function () {
     },
 
     render: function(){
-      $("#content").html("Yeah");
+      this.collection.each(function(model) {
+        $("#content").html(model.attributes.text);
+      });
     },
 
     add: function() {
