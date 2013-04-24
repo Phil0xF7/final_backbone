@@ -8,10 +8,20 @@ $(document).ready(function () {
 
     initialize: function(){
       _.bindAll(this, 'render', 'addOne', 'addAll');
+
+      this.collection = new List();
+      this.collection.bind('reset', this.reset);
+      this.collection.bind('add', this.add);
+
+      this.collection.fetch();
     },
 
     render: function(){
-      $("#content").append("Yeah");
+      $("#content").html("Yeah");
+    },
+
+    add: function() {
+
     },
 
     addOne: function(){
@@ -29,10 +39,9 @@ $(document).ready(function () {
 
   var List = Backbone.Collection.extend({
     model: Item,
-    url: '/data'
+    url: '/data/1.json'
   });
 
   var listView = new ListView();
 
-  var person = new Person();
 });
