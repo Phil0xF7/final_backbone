@@ -17,7 +17,6 @@ $(document).ready(function () {
     },
 
     render: function(){
-      $("#content").html("<ul>");
       this.collection.each(function(model) {
         $("#content").append("<li>" + model.attributes.text + "</li>");
       });
